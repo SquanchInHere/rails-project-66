@@ -68,3 +68,34 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+group :production do
+  gem 'pg', '~> 1.5'
+end
+
+gem 'rubocop'
+
+gem 'colorize', '~> 1.1'
+
+gem 'rubocop-rails'
+
+gem 'slim_lint', '~> 0.26.0'
+
+gem 'omniauth-github', '~> 2.0'
+
+gem 'omniauth-rails_csrf_protection', '~> 1.0'
+
+gem 'annotate', '~> 3.2'
+
+gem 'simple_form', '~> 5.3'
+
+gem 'i18n-debug', '~> 1.2'
+
+gem 'rails-i18n', '~> 7.0'
+
+gem 'pundit', '~> 2.3'
+
+gem 'dotenv-rails', '~> 3.1'
+
+gem 'faker'
+
