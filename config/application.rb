@@ -29,15 +29,5 @@ module RailsProject66
     # config.eager_load_paths << Rails.root.join("extras")
     routes.default_url_options = { host: ENV.fetch('BASE_URL', nil) }
     config.i18n.default_locale = :ru
-
-    config.action_mailer.delivery_method = :smtp
-    config.action_mailer.smtp_settings = {
-      user_name: ENV['MAIL_USER'],
-      password: ENV['MAIL_PASSWORD'],
-      address: ENV['MAIL_ADDRESS'],
-      host: ENV['MAIL_HOST'],
-      port: ENV['MAIL_USER'],
-      authentication: :login
-    }
   end
 end
