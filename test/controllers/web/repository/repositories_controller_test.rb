@@ -29,14 +29,14 @@ module Web
         assert_response :success
       end
 
-      test 'should show user_book' do
+      test 'should show repository' do
         sign_in @user
 
         get repository_url(@repository)
         assert_response :success
       end
 
-      test 'shold create repository' do
+      test 'should create repository' do
         sign_in @user
 
         post repositories_url, params: { repository: { github_id: @git_rep_id } }
