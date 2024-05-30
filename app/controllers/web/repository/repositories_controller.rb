@@ -3,8 +3,7 @@
 module Web
   module Repository
     class RepositoriesController < ApplicationController
-      before_action :authenticate_user!
-      before_action :set_github_client, only: %i[new create]
+      before_action :authenticate_user!, :set_github_client
       before_action :set_repository, only: :show
 
       def index

@@ -7,11 +7,11 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    user_name: ENV['MAIL_USER'],
-    password: ENV['MAIL_PASSWORD'],
-    address: ENV['MAIL_ADDRESS'],
-    host: ENV['MAIL_HOST'],
-    port: ENV['MAIL_PORT'],
+    user_name: ENV.fetch('MAIL_USER', nil),
+    password: ENV.fetch('MAIL_PASSWORD', nil),
+    address: ENV.fetch('MAIL_ADDRESS', nil),
+    host: ENV.fetch('MAIL_HOST', nil),
+    port: ENV.fetch('MAIL_PORT', nil),
     authentication: :login
   }
   # Settings specified here will take precedence over those in config/application.rb.
