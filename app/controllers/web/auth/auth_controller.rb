@@ -1,0 +1,41 @@
+# frozen_string_literal: true
+
+module Web
+  module Auth
+    class AuthController < ApplicationController
+      def callback
+        data = request.env['omniauth.auth']
+        user = get_user_by(data)
+
+        if user.save
+          session['user_id'] = user.id
+          flash[:notice] = t('.login_success')
+        else
+          flash[:alert] = t('.login_fail')
+        end
+
+        redirect_to root_path
+      end
+
+      def logout
+        session.delete('user_id')
+
+        flash[:notice] = t('.logout_success')
+        redirect_to root_path
+      end
+
+      private
+
+      def get_user_by(data)
+        email = data['info']['email']
+
+        user = User.find_or_initialize_by(email:)
+
+        user.token = data['credentials']['token']
+        user.nickname = data['info']['nickname']
+
+        user
+      end
+    end
+  end
+end
