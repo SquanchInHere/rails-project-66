@@ -18,6 +18,6 @@ Rails.application.routes.draw do
   end
 
   namespace :api do
-    resources :check, only: %i[create]
+    resources :checks, only: %i[create]
   end
 end
