@@ -69,6 +69,7 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
   gem 'selenium-webdriver'
+  gem 'webmock'
 end
 
 group :production do
@@ -100,4 +101,3 @@ gem "sentry-rails"
 gem 'simple_form', '~> 5.3'
 gem 'slim_lint', '~> 0.26.0'
 gem 'stackprof'
-gem 'webmock'

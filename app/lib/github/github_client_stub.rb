@@ -45,11 +45,11 @@ module Github
     def repository_params(github_repo_id)
       {
         name: 'javascript/repo',
-        full_name: 'SquanchInHere/javascript_repo',
+        full_name: 'tovarish39/javascript_repo',
         language: 'javascript',
-        clone_url: 'http://github.git/SquanchInHere/ruby_repo',
+        clone_url: 'http://github.git/tovarish39/ruby_repo',
         github_id: github_repo_id,
-        ssh_url: 'github.git/SquanchInHere/ruby_repo'
+        ssh_url: 'github.git/tovarish39/ruby_repo'
       }
     end
   end
