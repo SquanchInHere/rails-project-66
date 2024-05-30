@@ -44,7 +44,6 @@ class CheckRepositoryJob < ApplicationJob
     dir_path
   end
 
-  # def handle_check_status(check, user, linter_result, status, email_type, extra_attrs = {})
   def handle_check_status(check, user, linter_result, status, email_type, extra_attrs = {})
     check.update(extra_attrs.merge(details: linter_result))
     check.public_send(status)
