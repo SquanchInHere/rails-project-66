@@ -3,15 +3,6 @@
 require 'active_support/core_ext/integer/time'
 
 Rails.application.configure do
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    user_name: ENV['MAIL_USER'],
-    password: ENV['MAIL_PASSWORD'],
-    address: ENV['MAIL_ADDRESS'],
-    host: ENV['MAIL_HOST'],
-    port: ENV['MAIL_PORT'],
-    authentication: :login
-  }
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
@@ -64,7 +55,7 @@ Rails.application.configure do
 
   # Log to STDOUT by default
   config.logger = ActiveSupport::Logger.new($stdout)
-                                       .tap  { |logger| logger.formatter = ::Logger::Formatter.new }
+                                       .tap  { |logger| logger.formatter = Logger::Formatter.new }
                                        .then { |logger| ActiveSupport::TaggedLogging.new(logger) }
 
   # Prepend all log lines with the following tags.
