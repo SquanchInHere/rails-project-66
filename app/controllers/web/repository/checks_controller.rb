@@ -8,9 +8,9 @@ module Web
 
       def show
         authorize @check
+        flash.now[:notice] = t('.check_in_progress')
 
         unless @check.finished? || @check.failed?
-          flash[:notice] = t('.check_in_progress')
           redirect_to @check.repository and return
         end
 
