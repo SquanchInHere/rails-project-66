@@ -43,7 +43,14 @@ module Github
     end
 
     def repository_params(github_repo_id)
-      REPOSITORY.merge(github_id: github_repo_id)
+      {
+        name: 'javascript/repo',
+        full_name: 'SquanchInHere/javascript_repo',
+        language: 'javascript',
+        clone_url: 'http://github.git/SquanchInHere/ruby_repo',
+        github_id: github_repo_id,
+        ssh_url: 'github.git/SquanchInHere/ruby_repo'
+      }
     end
   end
 end
