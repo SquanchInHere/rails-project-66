@@ -37,7 +37,7 @@ module Web
       private
 
       def repository_params
-        @github_client.repository_params(params.require(:repository).permit(:github_id))
+        @github_client.repository_params(params[:repository][:github_id])
       end
 
       def set_repository
