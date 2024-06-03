@@ -8,14 +8,6 @@ class ApplicationPolicy
     @record = record
   end
 
-  def user_owns_record?
-    user == record.user
-  end
-
-  def user_owns_repository?
-    user == record.repository.user
-  end
-
   def index?
     false
   end
@@ -42,6 +34,14 @@ class ApplicationPolicy
 
   def destroy?
     false
+  end
+
+  def user_owns_record?
+    @user == record.user
+  end
+
+  def user_owns_repository?
+    @user == record.repository.user
   end
 
   class Scope
