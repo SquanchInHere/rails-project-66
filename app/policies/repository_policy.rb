@@ -2,14 +2,14 @@
 
 class RepositoryPolicy < ApplicationPolicy
   def show?
-    user == record.user
+    user_owns_record?
   end
 
   def new?
-    user == record.user
+    user_owns_record?
   end
 
   def create?
-    user == record.user
+    user_owns_record?
   end
 end

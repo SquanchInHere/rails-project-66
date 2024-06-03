@@ -2,10 +2,10 @@
 
 class Repository::CheckPolicy < ApplicationPolicy
   def show?
-    user == record.repository.user
+    user_owns_repository?
   end
 
   def create?
-    user == record.repository.user
+    user_owns_repository?
   end
 end
