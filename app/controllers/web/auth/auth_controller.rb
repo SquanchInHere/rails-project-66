@@ -33,6 +33,8 @@ module Web
 
         user.token = data['credentials']['token']
         user.nickname = data['info']['nickname']
+        user.provider = data['provider']
+        user.uid = data['uid']
 
         user
       end
