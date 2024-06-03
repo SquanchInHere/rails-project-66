@@ -88,11 +88,12 @@ ru:
         create:
           create_success: Проверка началась
     auth:
-      logout:
-        logout_success: Успешно разлогинен
-      callback:
-        login_success: Успешно залогинен
-        login_fail: Что-то пошло не так...
+      auth:
+        logout:
+          logout_success: Успешно разлогинен
+        callback:
+          login_success: Успешно залогинен
+          login_fail: Что-то пошло не так...
   helpers:
     submit:
       repository:
